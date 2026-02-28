@@ -48,6 +48,21 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Fixed Button Styles */
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            padding: 1.25rem 2rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-white font-sans text-logo-brown antialiased">
@@ -76,13 +91,18 @@
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
         <div class="container mx-auto px-8 z-10 grid md:grid-cols-2 gap-16 items-center">
-            <div class="fade-in-up">
+            <div class="fade-in-up text-center md:text-left">
                 <span class="inline-block text-logo-pink uppercase tracking-[0.3em] text-xs font-bold mb-6">Established on Main Street Stouffville</span>
-                <h2 class="text-6xl md:text-8xl font-serif font-bold leading-tight mb-8 text-logo-brown">Sweet Moments, <br><span class="italic font-light text-logo-pink">Hand-Crafted.</span></h2>
-                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed font-bold">We aren't just a snack bar—we're a family. Every shake is spun by hand and every smile is genuine.</p>
-                <div class="flex space-x-4">
-                    <a href="#specials" class="bg-logo-brown text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:shadow-xl transition-all">See Specials</a>
-                    <a href="tel:+19055914832" class="px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest border border-logo-brown/30 hover:bg-soft-cream transition-all">Call 905-591-4832</a>
+                <h2 class="text-5xl md:text-8xl font-serif font-bold leading-tight mb-8 text-logo-brown">Sweet Moments, <br><span class="italic font-light text-logo-pink">Hand-Crafted.</span></h2>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed font-bold mx-auto md:mx-0">We aren't just a snack bar. We're a family. Every shake is spun by hand and every smile is genuine.</p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#specials" class="btn-main bg-logo-brown text-white hover:bg-logo-pink hover:shadow-xl">
+                        See Specials
+                    </a>
+                    <a href="tel:+19055914832" class="btn-main border-2 border-logo-brown/20 bg-transparent hover:bg-soft-cream">
+                        Call 905-591-4832
+                    </a>
                 </div>
             </div>
             <div class="hidden md:block fade-in-up" style="animation-delay: 0.2s;">
@@ -95,81 +115,49 @@
     </section>
 
     <section id="specials" class="py-24 bg-soft-cream">
-        <div class="container mx-auto px-8 text-center">
+        <div class="container mx-auto px-4 md:px-8 text-center">
             <div class="mb-20 text-logo-brown font-bold">
                 <span class="text-logo-pink uppercase tracking-[0.3em] text-sm font-bold">🎉 Make Every Day a Snack Shack Day</span>
-                <h3 class="text-5xl font-serif font-bold mt-6 mb-4">Daily Specials</h3>
-                <p class="text-lg text-slate-500 font-light max-w-2xl mx-auto">Treat yourself to our weekly rotation of sweetness and joy at 6362 Main St.</p>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold mt-6 mb-4">Daily Specials</h3>
+                <p class="text-lg text-slate-500 font-light max-w-2xl mx-auto">Treat yourself to our weekly rotation of sweetness at 6362 Main St.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-full mx-auto font-bold">
-                <div class="bg-white p-6 rounded-[40px] border-2 border-logo-pink/20 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover border-2 border-logo-pink/10" alt="Milkshake">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Tuesdays</p>
-                    <h4 class="font-serif text-lg mb-1">Shake It Up</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$4</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-full mx-auto font-bold">
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border-2 border-logo-pink/20 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Milkshake">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Tuesdays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Shake It Up</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$4</p>
                 </div>
-                <div class="bg-white p-6 rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://lifemadesimplebakes.com/wp-content/uploads/2015/05/Tin-Roof-Ice-Cream-square-1200-500x500.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Waffle Cone">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Wednesdays</p>
-                    <h4 class="font-serif text-lg mb-1">Waffle Cones</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$5</p>
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://lifemadesimplebakes.com/wp-content/uploads/2015/05/Tin-Roof-Ice-Cream-square-1200-500x500.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Waffle Cone">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Wednesdays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Waffle Cones</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$5</p>
                 </div>
-                <div class="bg-white p-6 rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Espresso">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Thursdays</p>
-                    <h4 class="font-serif text-lg mb-1">Espresso</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$4</p>
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Espresso">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Thursdays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Espresso</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$4</p>
                 </div>
-                <div class="bg-white p-6 rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://www.thespruceeats.com/thmb/LiM-lpgiHoVAG4DCN6LO7dF0daA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ice-cream-float-4846526-step-06-16e01134e2a04131979f07bb028ce3ee.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Ice Cream Float">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Fridays</p>
-                    <h4 class="font-serif text-lg mb-1">Floats</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$5</p>
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://www.thespruceeats.com/thmb/LiM-lpgiHoVAG4DCN6LO7dF0daA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ice-cream-float-4846526-step-06-16e01134e2a04131979f07bb028ce3ee.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Ice Cream Float">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Fridays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Floats</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$5</p>
                 </div>
-                <div class="bg-white p-6 rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Lemonade">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Saturdays</p>
-                    <h4 class="font-serif text-lg mb-1">Lemons</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$4</p>
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Lemonade">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Saturdays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Lemons</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$4</p>
                 </div>
-                <div class="bg-white p-6 rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
-                    <img src="https://www.chewoutloud.com/wp-content/uploads/2024/04/Strawberry-Ice-Cream-in-Bowl.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover" alt="Strawberry Treat">
-                    <p class="text-logo-pink font-bold text-xs uppercase tracking-widest mb-2">Sundays</p>
-                    <h4 class="font-serif text-lg mb-1">Strawberry</h4>
-                    <p class="text-logo-brown text-2xl font-bold">$5</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="treats" class="py-24 bg-white">
-        <div class="container mx-auto px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-4xl font-serif font-bold mb-4">Our Hand-Crafted Treats</h3>
-                <div class="w-16 h-1 bg-logo-pink mx-auto rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="group overflow-hidden rounded-[40px] shadow-sm hover:shadow-xl transition-all">
-                    <img src="https://images.pexels.com/photos/3727250/pexels-photo-3727250.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" alt="Milkshakes">
-                    <div class="p-8 bg-soft-cream">
-                        <h4 class="font-serif text-2xl font-bold mb-2">Milkshakes</h4>
-                        <p class="text-slate-500 font-bold">Hand-spun with organic cream and premium flavors.</p>
-                    </div>
-                </div>
-                <div class="group overflow-hidden rounded-[40px] shadow-sm hover:shadow-xl transition-all">
-                    <img src="https://lifemadesimplebakes.com/wp-content/uploads/2015/05/Tin-Roof-Ice-Cream-square-1200-500x500.jpg" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" alt="Ice Cream Waffle Cones">
-                    <div class="p-8 bg-soft-cream">
-                        <h4 class="font-serif text-2xl font-bold mb-2">Waffle Cones</h4>
-                        <p class="text-slate-500 font-bold">Crispy, fresh waffle cones with our hand-scooped ice cream.</p>
-                    </div>
-                </div>
-                <div class="group overflow-hidden rounded-[40px] shadow-sm hover:shadow-xl transition-all">
-                    <img src="https://www.thespruceeats.com/thmb/LiM-lpgiHoVAG4DCN6LO7dF0daA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ice-cream-float-4846526-step-06-16e01134e2a04131979f07bb028ce3ee.jpg" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" alt="Ice Cream Floats">
-                    <div class="p-8 bg-soft-cream">
-                        <h4 class="font-serif text-2xl font-bold mb-2">Ice Cream Floats</h4>
-                        <p class="text-slate-500 font-bold">The perfect blend of fizzy soda and creamy happiness.</p>
-                    </div>
+                <div class="bg-white p-4 md:p-6 rounded-[30px] md:rounded-[40px] border border-logo-mint/40 shadow-sm hover:shadow-md transition-all">
+                    <img src="https://www.chewoutloud.com/wp-content/uploads/2024/04/Strawberry-Ice-Cream-in-Bowl.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full mb-3 md:mb-4 object-cover" alt="Strawberry Treat">
+                    <p class="text-logo-pink font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Sundays</p>
+                    <h4 class="font-serif text-sm md:text-lg mb-1">Strawberry</h4>
+                    <p class="text-logo-brown text-xl md:text-2xl font-bold">$5</p>
                 </div>
             </div>
         </div>
@@ -180,8 +168,8 @@
             <h3 class="text-sm uppercase tracking-[0.4em] text-logo-brown/50 mb-16 font-bold">From Our Community</h3>
             <div id="testimonial-container" class="max-w-4xl mx-auto min-h-[250px] flex items-center justify-center text-logo-brown"></div>
             <div class="flex justify-center space-x-8 mt-12">
-                <button onclick="changeTestimonial(-1)" class="w-16 h-16 rounded-full border-2 border-logo-brown/10 hover:border-logo-pink transition-colors text-xl shadow-sm"><i class="fas fa-chevron-left"></i></button>
-                <button onclick="changeTestimonial(1)" class="w-16 h-16 rounded-full border-2 border-logo-brown/10 hover:border-logo-pink transition-colors text-xl shadow-sm"><i class="fas fa-chevron-right"></i></button>
+                <button onclick="changeTestimonial(-1)" class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-logo-brown/10 hover:border-logo-pink transition-colors text-xl shadow-sm"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="changeTestimonial(1)" class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-logo-brown/10 hover:border-logo-pink transition-colors text-xl shadow-sm"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -190,7 +178,7 @@
         <div class="container mx-auto px-8 grid md:grid-cols-3 gap-20">
             <div>
                 <img src="https://i.postimg.cc/PpC1M8J2/615790443-17849043009656125-2597734954172127466-n.jpg" class="w-20 h-20 rounded-full mb-8 grayscale brightness-200" alt="Footer Logo">
-                <p class="text-slate-300 text-lg leading-relaxed font-light">Crafting sweet memories on Main Street. A family-run dessert boutique where everyone is welcome.</p>
+                <p class="text-slate-300 text-lg leading-relaxed font-light">Crafting sweet memories on Main Street. A family-run boutique where everyone is welcome.</p>
             </div>
             <div>
                 <h4 class="font-serif text-2xl mb-8 font-bold text-white">Find the Magic</h4>
@@ -222,7 +210,7 @@
             const r = reviews[currentIdx];
             document.getElementById('testimonial-container').innerHTML = `
                 <div class="fade-in-up px-4">
-                    <div class="text-logo-mint text-5xl mb-10 font-bold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="text-logo-mint text-4xl md:text-5xl mb-10 font-bold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-xl md:text-3xl font-serif italic mb-10 leading-snug text-logo-brown">"${r.text}"</p>
                     <p class="text-sm uppercase tracking-[0.3em] font-bold text-logo-pink">— ${r.name}</p>
                 </div>
